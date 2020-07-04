@@ -35,34 +35,40 @@ driver.implicitly_wait(10000)
 driver.find_element_by_xpath('//*[@id="signin-form"]/div[3]/div[2]/button/span[2]').click()
 print("Sign In Button Clicked")
 driver.implicitly_wait(50000)
-
+sleep(10)
 print("now moving forward")
-driver.get("https://www.tradingview.com/chart/?symbol=FX%3AAUDUSD")
-driver.implicitly_wait(5000)
 
-driver.find_element_by_xpath('/html/body/div[2]/div[3]/div/div/div/div').click()
+
+_hamburger = driver.find_element_by_xpath('/html/body/div[2]/div[3]/div/div/div/div')
+print(_hamburger.get_attribute('innerHTML'))
+_hamburger.click()
 print("hamburger clicked")
 driver.implicitly_wait(5000)
 #sleep(3)
 
-#code from previous version start
-driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/span/div[1]/div/div/div[2]').click()
-print("export data clicked")
-driver.implicitly_wait(5000)
-driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/div/div[1]/div/div[3]/div/span/button').click()
-print("export button clicked clicked")
-#code from previous version end
-
-#code start
-# driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/div/div[2]/div[5]/div/div').click()
+# #code from previous version start
+# driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/span/div[1]/div/div/div[2]').click()
 # print("export data clicked")
 # driver.implicitly_wait(5000)
-# # driver.find_element_by_class_name('item-3dBR9Pqb').click()
-# # print("export data clicked")
-# # driver.implicitly_wait(5000)
-
 # driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/div/div[1]/div/div[3]/div/span/button').click()
 # print("export button clicked clicked")
+# #code from previous version end
+
+#code start
+_exportChartData = driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/span/div[1]/div/div/div[3]/div/div')
+#driver.find_elements_by_xpath("//*[contains(text(), 'Export chart data...')]")
+print(_exportChartData.get_attribute('innerHTML'))
+_exportChartData.click()
+
+print("export data clicked")
+driver.implicitly_wait(5000)
+# driver.find_element_by_class_name('item-3dBR9Pqb').click()
+# print("export data clicked")
+# driver.implicitly_wait(5000)
+sleep(3)
+
+driver.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/div/div[1]/div/div[3]/div/span/button').click()
+print("export button clicked clicked")
 #code end
 
 #searchButton.Click()
