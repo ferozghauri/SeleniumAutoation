@@ -30,11 +30,11 @@ while res <10:
     print("Email username button clicked")
     driver.implicitly_wait(5000)
 
-    driver.find_element_by_xpath('//*[@id="signin-form"]/div[1]/div[1]/input').send_keys("GoodyErick")
+    driver.find_element_by_xpath('//*[@id="signin-form"]/div[1]/div[1]/input').send_keys("")
     print("username entered")
     driver.implicitly_wait(10000)
 
-    driver.find_element_by_xpath('//*[@id="signin-form"]/div[2]/div/div[1]/input').send_keys("password1234")
+    driver.find_element_by_xpath('//*[@id="signin-form"]/div[2]/div/div[1]/input').send_keys("")
     print("password entered")
     driver.implicitly_wait(10000)
 
